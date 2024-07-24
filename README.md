@@ -5,4 +5,5 @@
 ```sh
 npx -p @angular/cli ng new site-playground-cms-angular-bootstrap
 ```
+
 - Using Angular v18.1.
