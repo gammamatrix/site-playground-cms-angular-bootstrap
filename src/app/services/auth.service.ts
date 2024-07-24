@@ -9,11 +9,11 @@ import {
   CreateToken as iCreateToken,
   Login as iLogin,
   Logout as iLogout,
-  LogoutToken as iLogoutToken,
+  LogoutToken as iLogoutToken
 } from '../app.types';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AuthService {
   private authUrl: string = environment.authUrl;
@@ -23,7 +23,7 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    public router: Router,
+    public router: Router
   ) {}
 
   getAuthUrl(): string {
@@ -39,14 +39,14 @@ export class AuthService {
   login(auth: iLogin): Observable<boolean> {
     return this.http
       .post<iAuthToken>(this.authUrl + '/api/login', auth, {
-        withCredentials: true,
+        withCredentials: true
       })
       .pipe(
         map((result) => {
           localStorage.setItem('app_token', result.token);
           localStorage.setItem('csrf_token', result.csrf_token);
           return true;
-        }),
+        })
       );
   }
 
@@ -60,7 +60,7 @@ export class AuthService {
       map((result) => {
         localStorage.setItem('csrf_token', result.token);
         return result.token;
-      }),
+      })
     );
   }
 
@@ -77,10 +77,10 @@ export class AuthService {
     return this.http.get(this.authUrl + '/api/sanctum/csrf-cookie').pipe(
       map((result) => {
         console.log('AuthService.csrf', {
-          result: result,
+          result: result
         });
         return true;
-      }),
+      })
     );
   }
 
@@ -103,13 +103,13 @@ export class AuthService {
     }
     return this.http
       .post<iLogoutToken>(this.authUrl + '/api/logout', logout, {
-        withCredentials: true,
+        withCredentials: true
       })
       .pipe(
         map((result) => {
           localStorage.setItem('csrf_token', result.csrf_token);
           return result;
-        }),
+        })
       );
   }
 

@@ -7,7 +7,7 @@ import { AuthService } from './services/auth.service';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
   title = 'CMS Dashboard';
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   public isAuthenticated = false;
 
   constructor(private service: AuthService) {
-    this.service.isAuthenticated.subscribe(logged => {
+    this.service.isAuthenticated.subscribe((logged) => {
       this.isAuthenticated = logged;
     });
   }
