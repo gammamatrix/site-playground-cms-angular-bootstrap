@@ -1,0 +1,115 @@
+<nav aria-label="breadcrumb" class="m-3">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/">Home</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      <a href="/dashboard">Dashboard</a>
+    </li>
+  </ol>
+</nav>
+<div class="container alerts-container">
+  <div class="row justify-content-center" id="alerts"></div>
+</div>
+
+<div class="container">
+  <h1>Dashboard</h1>
+  <div class="row justify-content-center">
+    <div class="col-sm-6 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <a href="/pages">
+            <h2>Pages</h2>
+          </a>
+          <small class="text-muted">manage pages</small>
+        </div>
+        <ul class="list-group list-group-flush">
+          <a
+            href="/pages/create"
+            class="list-group-item list-group-item-action"
+          >
+            <i class="fa fa-edit"></i>
+            Create a page
+          </a>
+          <a
+            href="/pages/trash/only"
+            class="list-group-item list-group-item-action"
+          >
+            <i class="fa-solid fa-trash"></i>
+            View page trash
+          </a>
+          <a
+            href="/pages/trash/with"
+            class="list-group-item list-group-item-action"
+          >
+            <i class="fa-solid fa-trash-can"></i>
+            View pages with trash
+          </a>
+          <a href="/pages/books" class="list-group-item list-group-item-action">
+            <i class="fa-solid fa-book"></i>
+            View books
+          </a>
+          <a
+            href="/pages/periodicals"
+            class="list-group-item list-group-item-action"
+          >
+            <i class="fa-regular fa-newspaper"></i>
+            View periodicals
+          </a>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-6 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <h2>Snippets</h2>
+          <small class="text-muted">manage snippets</small>
+        </div>
+        <ul class="list-group list-group-flush">
+          <a
+            href="/snippets/create"
+            class="list-group-item list-group-item-action"
+          >
+            <i class="fa fa-edit"></i>
+            Create a snippet
+          </a>
+          <a
+            href="/snippets/trash/only"
+            class="list-group-item list-group-item-action"
+          >
+            <i class="fa-solid fa-trash"></i>
+            View snippet trash
+          </a>
+          <a
+            href="/snippets/trash/with"
+            class="list-group-item list-group-item-action"
+          >
+            <i class="fa-solid fa-trash-can"></i>
+            View snippets with trash
+          </a>
+          <a
+            href="/snippets/books"
+            class="list-group-item list-group-item-action"
+          >
+            <i class="fa-regular fa-image"></i>
+            View books
+          </a>
+          <a
+            href="/snippets/slideshows"
+            class="list-group-item list-group-item-action"
+          >
+            <i class="fa-regular fa-images"></i>
+            View slideshows
+          </a>
+          <a
+            href="/snippets/widgets"
+            class="list-group-item list-group-item-action"
+          >
+            <i class="fa-solid fa-boxes-stacked"></i>
+            View widgets
+          </a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
