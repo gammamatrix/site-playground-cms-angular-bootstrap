@@ -12,6 +12,7 @@ import { AuthService } from './services/auth.service';
 export class AppComponent implements OnInit {
   title = 'CMS Dashboard';
 
+  public theme: string = 'dark';
   public isReady = false;
   public isAuthenticated = false;
 
@@ -23,5 +24,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.isReady = true;
+  }
+
+  public setTheme(theme: string) {
+    this.theme = theme;
+    const html = document.querySelector('html');
+    html?.setAttribute('data-bs-theme', this.theme);
   }
 }
