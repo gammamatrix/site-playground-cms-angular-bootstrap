@@ -5,18 +5,22 @@ import { Router } from '@angular/router';
 describe('AuthService', () => {
   let routerSpy: jasmine.SpyObj<Router>;
   let httpClientSpy: jasmine.SpyObj<HttpClient>;
-  let authService: AuthService;
+  let service: AuthService;
   beforeEach(() => {
     routerSpy = jasmine.createSpyObj('Router', ['get']);
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
-    authService = new AuthService(httpClientSpy, routerSpy);
+    service = new AuthService(httpClientSpy, routerSpy);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
   });
 
   it('isReady should be true', () => {
-    expect(authService.isReady()).toBe(true);
+    expect(service.isReady()).toBe(true);
   });
 
   it('getAuthUrl should return an API URL for authentication', () => {
-    expect(authService.getAuthUrl()).toBe('//site-api-angular');
+    expect(service.getAuthUrl()).toBe('//site-api-angular');
   });
 });
